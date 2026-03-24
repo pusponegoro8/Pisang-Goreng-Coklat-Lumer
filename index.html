@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pisang Goreng Coklat Lumer - Sistem Delivery Order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="products">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-banana" style="color: var(--primary-gold); margin-right: 0.5rem;"></i>
+        Pisang Lumer Delivery
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Produk</a></li>
+        <li><a href="cart.html">Keranjang</a></li>
+        <li><a href="orders.html">Pesanan</a></li>
+      </ul>
+      <div class="cart-icon">
+        <a href="cart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count"></span>
+        </a>
+      </div>
+      <div class="mobile-menu-toggle">
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Pisang Goreng Coklat Lumer</h1>
+      <p>Renyah di luar, lumer meleleh di mulut. Delivery cepat ke rumah Anda!</p>
+      <a href="#products" class="btn btn-primary">Pesan Sekarang</a>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="py-5">
+    <div class="container">
+      <h2 class="section-title fade-in-up">Pilih Menu Favorit</h2>
+      <div class="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- Floating WA -->
+  <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Pisang%20Goreng%20Coklat%20Lumer!" class="floating-wa" title="Chat WA">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

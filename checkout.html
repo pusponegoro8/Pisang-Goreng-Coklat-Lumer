@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Delivery - Pisang Goreng Coklat Lumer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-banana" style="color: var(--primary-gold); margin-right: 0.5rem;"></i>
+        Pisang Lumer Delivery
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Produk</a></li>
+        <li><a href="cart.html">Keranjang</a></li>
+        <li><a href="orders.html">Pesanan</a></li>
+      </ul>
+      <div class="cart-icon">
+        <a href="cart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count"></span>
+        </a>
+      </div>
+      <div class="mobile-menu-toggle">
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+      </div>
+    </div>
+  </nav>
+
+  <section style="padding: 120px 0 80px;">
+    <div class="container">
+      <h1 class="section-title text-center mb-5">Checkout & Delivery</h1>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="summary-card mb-4">
+            <h3>Detail Pesanan</h3>
+            <div id="checkout-items" style="max-height: 300px; overflow-y: auto;"></div>
+            <div style="font-size: 1.5rem; display: flex; justify-content: space-between; margin-top: 1rem;">
+              <span>Total:</span>
+              <span class="cart-total" style="font-weight: bold; color: var(--primary-gold);">Rp 0</span>
+            </div>
+          </div>
+
+          <form id="checkout-form" class="summary-card">
+            <h3>Informasi Pengiriman</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nama Lengkap *</label>
+                  <input type="text" name="name" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>No. WhatsApp *</label>
+                  <input type="tel" name="phone" required placeholder="081234567890">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Alamat Lengkap *</label>
+              <textarea name="address" rows="3" required placeholder="Jl. Example No. 123, Kelurahan, Kecamatan, Kota"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Metode Pembayaran</label>
+                  <select name="payment">
+                    <option value="cash">Bayar Cash (COD)</option>
+                    <option value="transfer">Transfer Bank</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Catatan Pesanan (Opsional)</label>
+                  <textarea name="notes" rows="2" placeholder="Spesial tanpa keju, dll..."></textarea>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success w-100 mt-3">
+              <i class="fas fa-check"></i> Konfirmasi Pesanan & Kirim
+            </button>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="summary-card">
+            <h4>Estimasi Pengiriman</h4>
+            <ul class="mb-4">
+              <li>⏱️ Siap dalam 15-30 menit</li>
+              <li>🚚 Hot delivery (anti lelet)</li>
+              <li>📦 Min. order Rp50.000 (free ongkir)</li>
+            </ul>
+            <a href="https://wa.me/6281234567890" class="btn mb-2 w-100" style="background: #25D366; color: white;">
+              <i class="fab fa-whatsapp"></i> Chat WA Admin
+            </a>
+            <a href="cart.html" class="btn" style="background: #6c757d; color: white;">Kembali ke Keranjang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/6281234567890" class="floating-wa" title="Chat WA">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    // Checkout specific script
+    document.addEventListener('DOMContentLoaded', () => {
+      const itemsContainer = document.getElementById('checkout-items');
+      const form = document.getElementById('checkout-form');
+      
+      // Render cart items
+      if (cart.length === 0) {
+        window.location.href = 'cart.html';
+        return;
+      }
+      
+      itemsContainer.innerHTML = cart.map(item => `
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding: 0.5rem; background: var(--light-cream); border-radius: 8px;">
+          <span>${item.name} <strong>x${item.quantity}</strong></span>
+          <span>Rp ${(item.price * item.quantity).toLocaleString()}</span>
+        </div>
+      `).join('');
+      
+      updateCartUI();
+      
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (handleCheckout(form)) {
+          // Success handled in script.js
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang - Pisang Goreng Coklat Lumer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="cart">
+  <!-- Navbar (same as index) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-banana" style="color: var(--primary-gold); margin-right: 0.5rem;"></i>
+        Pisang Lumer Delivery
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Produk</a></li>
+        <li><a href="cart.html">Keranjang</a></li>
+        <li><a href="orders.html">Pesanan</a></li>
+      </ul>
+      <div class="cart-icon">
+        <a href="cart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count"></span>
+        </a>
+      </div>
+      <div class="mobile-menu-toggle">
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+      </div>
+    </div>
+  </nav>
+
+  <section style="padding: 120px 0 80px;">
+    <div class="container">
+      <h1 class="section-title text-center mb-5">Keranjang Belanja</h1>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="cart-container"></div>
+        </div>
+        <div class="col-lg-4">
+          <div class="summary-card">
+            <h3>Ringkasan</h3>
+            <div class="mb-4" style="font-size: 1.5rem; display: flex; justify-content: space-between;">
+              <span>Total Belanja:</span>
+              <span class="cart-total">Rp 0</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary w-100 mb-3">Lanjut Checkout</a>
+            <a href="index.html" class="btn" style="background: #6c757d; color: white;">Lanjut Belanja</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/6281234567890" class="floating-wa" title="Chat WA">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
